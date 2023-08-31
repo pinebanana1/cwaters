@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.ortiz.touchview.TouchImageView
+        android:id="@+id/touchImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/top_text_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:padding="1dp">
+
+        <Button
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
+            android:text="Accept"
+            app:icon="@android:drawable/checkbox_on_background"
+            app:iconSize="24dp"
+            app:iconTintMode="multiply" />
+
+        <Button
+            android:id="@+id/reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reject"
+            app:icon="@android:drawable/ic_delete"
+            app:iconSize="24dp"
+            app:iconTintMode="multiply" />
+        <!--TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingRight="3dp"
+            android:text="scroll pos" /-->
+
+        <!--TextView
+            android:id="@+id/scroll_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" /-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_text_line"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_blue_dark"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/pixel_uri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="3dp"
+            android:text="text1" />
+
+        <!--TextView
+            android:id="@+id/pixel_filename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="3dp"
+            android:text="text2" /-->
+
+    </LinearLayout>
+
+    <!--TextView
+        android:id="@+id/current_zoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:text="current zom" /-->
+
+
+</RelativeLayout>

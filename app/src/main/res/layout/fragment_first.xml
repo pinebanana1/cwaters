@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    tools:context="com.ora.calmwaters.ui.FirstFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/protocolLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:hint="Protocol ID"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/subjectLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/protocol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="21-100-0003" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/subjectLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/assessmentLayout"
+        app:layout_constraintTop_toBottomOf="@+id/protocolLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject ID"
+            android:maxLength="7"
+            android:inputType="number"
+            android:visibility="gone"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/assessmentLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/eyeLRGrp"
+        app:layout_constraintTop_toBottomOf="@+id/subjectLayout"
+        android:visibility="gone"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/assessment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Assessment"
+            android:text="Inclusion"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/eyeLRGrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:layout_marginTop="10pt"
+        android:layout_marginBottom="10pt"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/leftEye"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:drawableEnd="@android:drawable/ic_menu_view"
+            android:text="Left"
+            android:textSize="10dp"
+            />
+
+        <RadioButton
+            android:id="@+id/rightEye"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:textSize="10dp"
+            android:checked="true"
+            />
+        />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/superiorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="@string/face_inwards"
+        android:textSize="20dp"
+        android:visibility="visible"
+
+        app:layout_constraintBottom_toTopOf="@id/directionSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/directionSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:checked="false"
+
+        android:rotation="-90"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text=""
+
+        app:layout_constraintBottom_toTopOf="@id/timelineLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eyeLRGrp"
+        app:thumbTint="@color/design_default_color_secondary"
+        app:trackTint="@color/white" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/frontText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/face_front"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:paddingTop="15dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/directionSwitch"
+            />
+
+
+
+    <!--com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/timelineLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Timeline"
+        android:text="Baseline"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/timeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout-->
+
+
+    <!--DigitalClock
+        app:layout_constraintBottom_toTopOf="@id/timelineLayout"
+
+        android:layout_marginLeft="140dp"
+        android:textSize="25dp"
+        android:layout_marginTop="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" /-->
+
+    <HorizontalScrollView
+        android:id="@+id/timelineLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+
+        >
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/timelineGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="false"
+        app:selectionRequired="false"
+        app:chipSpacingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/t10"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":10"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/t30"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:text=":30"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/t60"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:text=":60"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/t90"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:text=":90"/>
+
+    </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!--com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/timelineToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:checkedButton="@id/buttonBaseline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <Button
+            android:id="@+id/buttonBaseline"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Baseline" />
+
+        <Button
+            android:id="@+id/buttonB5"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+5m" />
+
+        <Button
+            android:id="@+id/buttonB10"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+10m" />
+
+        <Button
+            android:id="@+id/buttonB15"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+15m" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

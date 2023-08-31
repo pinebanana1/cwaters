@@ -1,0 +1,3 @@
+include ':box-content-sdk'
+include ':app'
+rootProject.name = "Ora Home Pilot"

@@ -1,0 +1,100 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Calm Waters In-Clinic Study</string>
+    <string name="phone_id_err">No ID file found</string>
+    <string name="phone_id_mult_err">Multiple ID files found</string>
+    <string name="ok">OK</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_diary">DiaryActivity</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="diary_url">https://run.pavlovia.org/OraClinical/athomedryeye</string>
+    <string name="face_front">Look Forward</string>
+    <string name="face_inwards">Look Towards Your Nose</string>
+    
+    <!-- Patient Info Fragment Strings -->
+    <string name="patient_info_hint">Patient Info/Subject ID</string>
+    <string name="patient_info_visit_number">Visit #</string>
+    <string name="patient_info_case_type">Protocol</string>
+    <string-array name="case_types">
+        <item>Pre-CAE</item>
+        <item>Post-CAE</item>
+    </string-array>
+    <string name="patient_info_pavlovia">Start Diary</string>
+    <string name="patient_info_video">Record Imaging Break Up Pattern</string>
+    <string name="patient_info_photo">Take photo for Redness Assesment</string>
+    <string name="patient_info_error_general">Can not be empty. Please enter info.</string>
+    <string name="patient_info_error_protocol">Protocol is empty. Please provide the protocol.</string>
+    <string name="patient_info_submit">Submit</string>
+    <string name="patient_info_next">Next</string>
+
+    <!-- SymptomFragment -->
+    <string name="symptomFragment_alert_message">You have finished recording your diaries.</string>
+
+    <!--  /////////////////// Symptom Diary Entries  ///////////////////-->
+    <string name="congestion">
+        0.0 None - No Breathing Difficulty \n
+        1.0 Mild - Some Sensation of Blockage \n
+        2.0 Moderate - Partial Blockage \n
+        3.0 Severe - Significant blockage but can still breathe through nose \n
+        4.0 Very Severe - Cannot breathe through nose at all
+    </string>
+    <string name="tearing">
+        0.0 None/Normal \n
+        1.0 Mild - A noticeably increased moistening of your eye \n
+        2.0 Moderate - Your eye feels "full" of water; your lashes feel a little wet \n
+        3.0 Severe - Feels like tears might drip down your face; very wet lashes \n
+        4.0 Very Severe - Tears are dripping down your face
+    </string>
+    <string name="swelling">
+        0.0 None  \n
+        1.0 Mild - Detectable swelling of lower and/or upper lid \n
+        2.0 Moderate - Definite swelling of lower and/or upper lid \n
+        3.0 Severe - Swelling of lower and/or upper lid to the point that there is a decrease in the space between your upper and lower lids
+    </string>
+    <string name="sneezing">
+        0.0 None \n
+        1.0 Mild - 1~2 sneezes in last 10 minutes \n
+        2.0 Moderate - 3~5 sneezes in last 10 minutes \n
+        3.0 Severe - 6~8 sneezes in last 10 minutes \n
+        4.0 Very Severe - 9 or more sneezes in last 10 minutes
+    </string>
+    <string name="runny">
+        0.0 None \n
+        1.0 Mild - Sensation of nasal mucus flowing down nasal passage; no discharge present \n
+        2.0 Moderate - May be associated with post nasal drip; nasal mucus flow more pronounced; will need to blow nose soon \n
+        3.0 Severe - Nasal mucus discharge requiring occasional wiping with Kleenex \n
+        4.0 Very Severe - Uncontrolled nasal discharge; requiring frequent wiping and blowing nose
+    </string>
+    <string name="itching">
+        0.0 None  \n
+        0.5 An intermittent tickle sensation possibly localized in the corner of the eye \n
+        1.0 An intermittent tickle sensation involving more than just the corner of the eye \n
+        1.5 Intermittent all-over tickling sensation \n
+        2.0 A mild continuous itch (can be localized) without desire to rub \n
+        2.5 Moderate, diffuse continuous itch with desire to rub \n
+        3.0 A severe itch with desire to rub \n
+        3.5 Severe itch improved with minimal rubbing \n
+        4.0 Incapacitating itch with an irresistible urge to rub
+    </string>
+
+    <!-- Accessibility -->
+    <string name="text_to_speech_part_1">Take a photo of the</string>
+    <string name="text_to_speech_part_2">eye, looking </string>
+</resources>

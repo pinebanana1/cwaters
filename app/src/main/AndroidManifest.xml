@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="calmwaters">
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ora_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DryEye">
+
+        <activity
+            android:name="com.ora.calmwaters.ui.PopupActivity"
+            android:theme="@style/Theme.DryEye.Transparent"></activity>
+
+        <activity
+            android:name="com.ora.calmwaters.ui.ProtocolActivity"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.DryEye.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--activity
+            android:name="com.ora.homepilot.ui.ProtocolActivity"
+            android:launchMode="singleInstance"
+            android:parentActivityName="com.ora.homepilot.ui.BoxActivity"
+            android:theme="@style/Theme.DryEye.NoActionBar">
+        </activity-->
+        <!--
+activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity
+        -->
+        <activity android:name="com.ora.calmwaters.ui.TouchImageViewActivity"
+            android:theme="@style/Theme.DryEye"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+
+
+        </activity>
+
+        <activity android:name="com.ora.calmwaters.ui.VideoReviewActivity"
+            android:theme="@style/Theme.DryEye"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.ora.calmwaters.ui.DiaryActivity"
+            android:label="@string/title_activity_diary"
+            android:theme="@style/Theme.DryEye.NoActionBar"/>
+
+        <receiver
+            android:name="com.ora.calmwaters.ui.PopupActivity$AlarmReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
+
+        <receiver android:name="com.ora.calmwaters.PowerConnectionReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.ora.calmwaters.OverlayService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/overlay_service" />
+        </service>
+        <!--provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="android.com.ora.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider-->
+    </application>
+
+</manifest>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patientInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        app:layout_constraintBottom_toTopOf="@id/visitLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/subjectId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:inputType="textAutoComplete"
+            android:hint="@string/patient_info_hint"
+            android:nextFocusForward="@+id/visitNumber"
+            android:imeOptions="actionNext"
+            tools:text="Patient/Subject Id Here"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/visitLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/caseLayout"
+        app:layout_constraintTop_toBottomOf="@id/patientInfoLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/visitNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/patient_info_visit_number"
+            android:maxLength="7"
+            android:inputType="number"
+            tools:text="0000000"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/caseLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/material_background_grey"
+        android:minHeight="50dp"
+        app:layout_constraintTop_toBottomOf="@id/visitLayout">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/caseHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="false"
+            android:textSize="12sp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginStart="17dp"
+            app:layout_constraintTop_toBottomOf="@id/visitLayout"
+            android:text="@string/patient_info_case_type"/>
+        <Spinner
+            android:id="@+id/caseSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:layout_marginStart="2dp"
+            android:spinnerMode="dropdown"
+            android:entries="@array/case_types"
+            android:prompt="@string/patient_info_case_type"
+            android:paddingStart="6dp"
+            app:layout_constraintTop_toBottomOf="@id/caseHint"/>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pavloviaButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.PatientInfo"
+        android:layout_marginTop="12dp"
+        android:text="@string/patient_info_pavlovia"
+        android:padding="10dp"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caseLayout"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/eyelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left/Right Eye"
+        android:textSize="17sp"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/pavloviaButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/eyeLRGrp"
+        app:layout_constraintBottom_toTopOf="@id/directionFrontTextview"/>
+
+    <RadioGroup
+        android:id="@+id/eyeLRGrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/eyelabel"
+        app:layout_constraintTop_toBottomOf="@id/pavloviaButton">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/leftEye"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/selecteye_left"
+            android:button="@null"
+            android:checked="false"
+            android:textSize="20dp" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rightEye"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/selecteye_right"
+            android:button="@null"
+            android:layout_marginEnd="25dp"
+            android:checked="false"
+            android:textSize="20dp"
+            />
+    </RadioGroup>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/directionFrontTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Look Forward"
+        android:textSize="17dp"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/eyeLRGrp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/directionSwitch"
+        app:layout_constraintBottom_toTopOf="@id/videoButton" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/directionSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/eyeLRGrp"
+        app:layout_constraintStart_toEndOf="@id/directionFrontTextview"
+        app:layout_constraintEnd_toStartOf="@id/directionUpTextview"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/directionUpTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Look to nose"
+        android:textSize="17dp"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/eyeLRGrp"
+        app:layout_constraintStart_toEndOf="@id/directionSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/videoButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/videoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="10dp"
+        style="@style/Widget.MaterialComponents.Button.PatientInfo"
+        android:fontFamily="@font/poppins"
+        android:text="@string/patient_info_video"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/directionSwitch"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/photoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="10dp"
+        style="@style/Widget.MaterialComponents.Button.PatientInfo"
+        android:text="@string/patient_info_photo"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/videoButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitButton"
+        style="@style/Widget.MaterialComponents.Button.PatientInfo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#ED1C24"
+        android:fontFamily="@font/poppins"
+        android:padding="10dp"
+        android:text="@string/patient_info_submit"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

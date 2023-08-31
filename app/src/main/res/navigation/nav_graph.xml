@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/patientInfoFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.ora.calmwaters.ui.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.ora.calmwaters.ui.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientInfoFragment"
+        android:name="com.ora.calmwaters.ui.PatientInfoFragment"
+        android:label="PatientInfoFragment"
+        tools:layout="@layout/fragment_patient_info">
+        <action
+            android:id="@+id/action_patientInfoFragment_to_congestionFragment"
+            app:destination="@id/congestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/symptomFragment"
+        android:name="com.ora.calmwaters.ui.diary.SymptomFragment"
+        android:label="SymptomFragment"
+        tools:layout="@layout/fragment_symptom"/>
+    <action
+        android:id="@+id/action_global_symptomFragment"
+        app:destination="@id/symptomFragment"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:exitAnim="@animator/nav_default_exit_anim" />
+    <fragment
+        android:id="@+id/congestionFragment"
+        android:name="com.ora.calmwaters.ui.diary.CongestionFragment"
+        android:label="CongestionFragment"
+        tools:layout="@layout/fragment_symptom">
+        <action
+            android:id="@+id/action_congestionFragment_to_itchingFragment"
+            app:destination="@id/itchingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itchingFragment"
+        android:name="com.ora.calmwaters.ui.diary.ItchingFragment"
+        android:label="ItchingFragment"
+        tools:layout="@layout/fragment_symptom">
+        <action
+            android:id="@+id/action_itchingFragment_to_itchyNoseFragment"
+            app:destination="@id/itchyNoseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itchyNoseFragment"
+        android:name="com.ora.calmwaters.ui.diary.ItchyNoseFragment"
+        android:label="ItchyNoseFragment"
+        tools:layout="@layout/fragment_symptom">
+        <action
+            android:id="@+id/action_itchyNoseFragment_to_sneezingFragment"
+            app:destination="@id/sneezingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sneezingFragment"
+        android:name="com.ora.calmwaters.ui.diary.SneezingFragment"
+        android:label="SneezingFragment"
+        tools:layout="@layout/fragment_symptom">
+        <action
+            android:id="@+id/action_sneezingFragment_to_swellingFragment"
+            app:destination="@id/swellingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/swellingFragment"
+        android:name="com.ora.calmwaters.ui.diary.SwellingFragment"
+        android:label="SwellingFragment"
+        tools:layout="@layout/fragment_symptom">
+        <action
+            android:id="@+id/action_swellingFragment_to_tearingFragment"
+            app:destination="@id/tearingFragment"
+            app:popUpTo="@id/patientInfoFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/tearingFragment"
+        android:name="com.ora.calmwaters.ui.diary.TearingFragment"
+        android:label="TearingFragment"
+        tools:layout="@layout/fragment_symptom">
+        <action
+            android:id="@+id/action_tearingFragment_to_patientInfoFragment"
+            app:destination="@id/patientInfoFragment"
+            app:popUpTo="@id/patientInfoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
